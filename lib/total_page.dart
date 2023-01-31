@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+// ignore: unused_import
 import 'package:getxstatemanagement/my_cart.dart';
 import 'package:getxstatemanagement/my_controller.dart';
 
