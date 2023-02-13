@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxstatemanagement/my_controller.dart';
@@ -40,8 +39,8 @@ class MyCart extends StatelessWidget {
                 ),
                 // ignore: prefer_const_constructors
                 SizedBox(width: 20,),
-                Obx(()=>Text("${c.mobil.toString()}",
-                style: TextStyle(
+                Obx(()=>Text(c.mobil.toString(),
+                style: const TextStyle(
                   fontSize: 30,
                 ),
                 )),
@@ -62,7 +61,7 @@ class MyCart extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             //motor
             Row(
@@ -88,8 +87,8 @@ class MyCart extends StatelessWidget {
                 ),
                 // ignore: prefer_const_constructors
                 SizedBox(width: 20,),
-                Obx(()=>Text("${c.motor.toString()}",
-                style: TextStyle(
+                Obx(()=>Text(c.motor.toString(),
+                style: const TextStyle(
                   fontSize: 30,
                 ),
                 )),
@@ -110,7 +109,7 @@ class MyCart extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               children: [
                 Expanded(child: Container()),

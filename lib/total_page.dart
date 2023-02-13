@@ -27,7 +27,7 @@ class TotalPage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Obx(() => Text("${c.sum.toString()}", style: TextStyle(
+            Obx(() => Text(c.sum.toString(), style: TextStyle(
               fontSize: 30,
               color: Colors.green
             ),)),
