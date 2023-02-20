@@ -6,8 +6,11 @@ import 'package:getxstatemanagement/total_page.dart';
 class MyCart extends StatelessWidget {
   MyCart({Key? key, required String title}) : super(key: key);
   final MyController c = Get.put(MyController());
+
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(30),
@@ -18,98 +21,82 @@ class MyCart extends StatelessWidget {
             //mobil
             Row(
               children: [
-                const Text("Mobil", style: TextStyle(
-                  fontSize: 30,
-                  color:Colors.black
-                ),),
-                Expanded(child: Container(),),
-
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.grey
-                  ),
-                  child: IconButton(
-                  // ignore: prefer_const_constructors
-                  icon: Icon(Icons.add,color:Colors.black),
-                  onPressed: ()=>c.increment(),
-                  )
+                const Text(
+                  "Mobil",
+                  style: TextStyle(fontSize: 30, color: Colors.black),
                 ),
-                // ignore: prefer_const_constructors
-                SizedBox(width: 20,),
-                Obx(()=>Text(c.mobil.toString(),
-                style: const TextStyle(
-                  fontSize: 30,
+                Expanded(
+                  child: Container(),
                 ),
-                )),
-                // ignore: prefer_const_constructors
-                SizedBox(width: 20,), 
                 Container(
-                  width: 50,
-                  height: 50,
+                  width: screenSize.width * 0.1,
+                  height: screenSize.width * 0.1,
                   decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.grey
-                  ),
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.grey),
                   child: IconButton(
-                  // ignore: prefer_const_constructors
-                  icon: Icon(Icons.remove,color:Colors.black),
-                  onPressed: ()=>c.decrement(),
-                  )
+                      icon: const Icon(Icons.add, color: Colors.black),
+                      onPressed: () => c.increment()),
+                ),
+                SizedBox(width: screenSize.width * 0.02),
+                Obx(() => Text(
+                      c.mobil.toString(),
+                      style: const TextStyle(fontSize: 30),
+                    )),
+                SizedBox(width: screenSize.width * 0.02),
+                Container(
+                  width: screenSize.width * 0.1,
+                  height: screenSize.width * 0.1,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.grey),
+                  child: IconButton(
+                      icon: const Icon(Icons.remove, color: Colors.black),
+                      onPressed: () => c.decrement()),
                 ),
               ],
             ),
-            const SizedBox(height: 20,),
+            SizedBox(height: screenSize.height * 0.02),
 
             //motor
             Row(
               children: [
-                const Text("Motor", style: TextStyle(
-                  fontSize: 30,
-                  color:Colors.black
-                ),),
-                Expanded(child: Container(),),
-
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.grey
-                  ),
-                  child: IconButton(
-                  // ignore: prefer_const_constructors
-                  icon: Icon(Icons.add,color:Colors.black),
-                  onPressed: ()=>c.incrementMotor(),
-                  )
+                const Text(
+                  "Motor",
+                  style: TextStyle(fontSize: 30, color: Colors.black),
                 ),
-                // ignore: prefer_const_constructors
-                SizedBox(width: 20,),
-                Obx(()=>Text(c.motor.toString(),
-                style: const TextStyle(
-                  fontSize: 30,
+                Expanded(
+                  child: Container(),
                 ),
-                )),
-                // ignore: prefer_const_constructors
-                SizedBox(width: 20,), 
                 Container(
-                  width: 50,
-                  height: 50,
+                  width: screenSize.width * 0.1,
+                  height: screenSize.width * 0.1,
                   decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.grey
-                  ),
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.grey),
                   child: IconButton(
-                  // ignore: prefer_const_constructors
-                  icon: Icon(Icons.remove,color:Colors.black),
-                  onPressed: ()=>c.decrementMotor(),
-                  )
+                      icon: const Icon(Icons.add, color: Colors.black),
+                      onPressed: () => c.incrementMotor()),
+                ),
+                SizedBox(width: screenSize.width * 0.02),
+                Obx(() => Text(
+                      c.motor.toString(),
+                      style: const TextStyle(fontSize: 30),
+                    )),
+                SizedBox(width: screenSize.width * 0.02),
+                Container(
+                  width: screenSize.width * 0.1,
+                  height: screenSize.width * 0.1,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.grey),
+                  child: IconButton(
+                      icon: const Icon(Icons.remove, color: Colors.black),
+                      onPressed: () => c.decrementMotor()),
                 ),
               ],
             ),
-            const SizedBox(height: 20,),
+            SizedBox(height: screenSize.height * 0.02),
             Row(
               children: [
                 Expanded(child: Container()),
